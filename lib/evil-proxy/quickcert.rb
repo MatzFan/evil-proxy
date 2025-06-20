@@ -159,7 +159,7 @@ class QuickCert
     Dir.mkdir("#{CERT_DIR}/#{dest}", 0700) unless File.exists?("#{CERT_DIR}/#{dest}")
 
     puts "Generating RSA keypair" if $DEBUG
-    keypair = OpenSSL::PKey::RSA.new 1024
+    keypair = OpenSSL::PKey::RSA.new 2048
 
     if cert_config[:password].nil? then
       File.open keypair_file, "w", 0400 do |f|
